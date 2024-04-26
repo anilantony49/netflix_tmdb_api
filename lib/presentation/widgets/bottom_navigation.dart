@@ -12,7 +12,7 @@ class BottomNavigationWidget extends StatelessWidget {
       valueListenable: indexChangeNotifier,
       builder: (BuildContext ctx, int newindex, Widget? _) {
         return BottomNavigationBar(
-           backgroundColor:backGroundColor,
+           backgroundColor:kbackGroundColor,
            type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.grey,
