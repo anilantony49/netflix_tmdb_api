@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const k5height = SizedBox(
+  height: 5,
+);
 const k10width = SizedBox(
   width: 10,
 );
@@ -21,3 +24,10 @@ const k25height = SizedBox(
 const k50height = SizedBox(
   height: 50,
 );
+
+// radius
+
+final BorderRadius k20radius = BorderRadius.circular(20.0);
+final BorderRadius k10radius = BorderRadius.circular(10.0);
+
+
