@@ -11,9 +11,11 @@ class ScreenSearch extends StatefulWidget {
   State<ScreenSearch> createState() => _ScreenSearchState();
 }
 
-bool isTapped = false;
+
 
 class _ScreenSearchState extends State<ScreenSearch> {
+
+bool isTapped = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
