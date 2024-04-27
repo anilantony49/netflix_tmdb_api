@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+const k10width = SizedBox(
+  width: 10,
+);
+const k15height = SizedBox(
+  height: 15,
+);
+const k10height = SizedBox(
+  height: 20,
+);
 const k20width = SizedBox(
   width: 20,
 );
