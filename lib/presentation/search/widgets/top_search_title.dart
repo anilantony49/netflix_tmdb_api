@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app_clone/core/constants/sizes.dart';
 
+
 class TopSearchItemTitle extends StatelessWidget {
-  const TopSearchItemTitle({super.key});
+  final String title;
+  final String imageUrl;
+  const TopSearchItemTitle(
+      {super.key, required this.title, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +19,13 @@ class TopSearchItemTitle extends StatelessWidget {
           height: 90,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(7),
-              image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      "https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/wjnhpz3osrai5aningjl/titanic?fimg-client"))),
+              image:  DecorationImage(
+                  fit: BoxFit.cover, image: NetworkImage(imageUrl))),
         ),
         k20width,
-        const Expanded(
+         Expanded(
             child: Text(
-          'title',
+         title,
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         )),
         const Icon(

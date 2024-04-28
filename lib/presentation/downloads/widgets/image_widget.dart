@@ -31,6 +31,7 @@ class DownloadsImageWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
         child: CachedNetworkImage(
+          filterQuality:FilterQuality.high,
           imageUrl: imageList,
           imageBuilder: (context, imageProvider) => ClipRRect(
             borderRadius: BorderRadius.circular(5),

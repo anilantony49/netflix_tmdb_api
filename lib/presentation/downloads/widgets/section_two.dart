@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netflix_app_clone/core/constants/colors.dart';
 import 'package:netflix_app_clone/core/constants/strings.dart';
 import 'package:netflix_app_clone/models/movie.dart';
+import 'package:netflix_app_clone/presentation/downloads/widgets/downloas_loading.dart';
 import 'package:netflix_app_clone/presentation/downloads/widgets/image_widget.dart';
 import 'package:netflix_app_clone/services/api_services.dart';
 
@@ -61,9 +62,7 @@ class _SectionTwoState extends State<SectionTwo> {
               ],
             );
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return DownloadsLoadingWidget(size: size);
           }
         },
       ),

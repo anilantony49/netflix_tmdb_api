@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+    final String imageUrl;
+
+  const MainCard({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7),
-            image: const DecorationImage(
+            image:  DecorationImage(
               image: NetworkImage(
-                  "https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/wjnhpz3osrai5aningjl/titanic?fimg-client"),
+                 imageUrl),
               fit: BoxFit.cover,
             )));
   }
