@@ -16,3 +16,4 @@ class ApiEndPoints {
   static const airingTodaySeries =
       '$kBaseUrl/tv/airing_today?api_key=${ApiKey.apiKey}';
 }
+  

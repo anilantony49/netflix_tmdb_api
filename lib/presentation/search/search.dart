@@ -13,8 +13,7 @@ class ScreenSearch extends StatefulWidget {
   State<ScreenSearch> createState() => _ScreenSearchState();
 }
 
-  late Future<List<Movie>> popularSearches;
-
+late Future<List<Movie>> popularSearches;
 
 class _ScreenSearchState extends State<ScreenSearch> {
   @override
@@ -23,7 +22,7 @@ class _ScreenSearchState extends State<ScreenSearch> {
     super.initState();
   }
 
-bool isTapped = false;
+  bool isTapped = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,16 +40,22 @@ bool isTapped = false;
               suffixIcon: const Icon(CupertinoIcons.xmark_circle_fill,
                   color: Colors.grey),
               style: const TextStyle(color: Colors.white),
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  isTapped=true;
+                  isTapped = true;
                 });
               },
             ),
             k20height,
             isTapped
-                ?  Expanded(child: SearchResultsWidget(movieList: popularSearches,))
-                :  Expanded(child: SearchIdleWidget(popularSearches: popularSearches,))
+                ? Expanded(
+                    child: SearchResultsWidget(
+                    movieList: popularSearches,
+                  ))
+                : Expanded(
+                    child: SearchIdleWidget(
+                    popularSearches: popularSearches,
+                  ))
           ],
         ),
       )),
