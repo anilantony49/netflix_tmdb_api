@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix_app_clone/core/constants/debounce/debounce.dart';
 import 'package:netflix_app_clone/core/constants/sizes.dart';
 import 'package:netflix_app_clone/models/movie.dart';
 import 'package:netflix_app_clone/presentation/search/widgets/search_idle.dart';
@@ -14,6 +15,7 @@ class ScreenSearch extends StatefulWidget {
 }
 
 late Future<List<Movie>> popularSearches;
+final _debouncer = Debouncer(milliseconds: 1 * 1000);
 
 class _ScreenSearchState extends State<ScreenSearch> {
   @override
@@ -40,6 +42,15 @@ class _ScreenSearchState extends State<ScreenSearch> {
               suffixIcon: const Icon(CupertinoIcons.xmark_circle_fill,
                   color: Colors.grey),
               style: const TextStyle(color: Colors.white),
+              onChanged: (value) {
+                _debouncer.run(() {
+                  setState(() {
+                    popularSearches = Api().getAllMoviesList(value);
+                    // seriesList = getAllSeriesList(value);
+                    // isTapped = true;
+                  });
+                });
+              },
               onTap: () {
                 setState(() {
                   isTapped = true;
@@ -49,7 +60,7 @@ class _ScreenSearchState extends State<ScreenSearch> {
             k20height,
             isTapped
                 ? Expanded(
-                    child: SearchResultsWidget(
+                    child: SearchReasult(
                     movieList: popularSearches,
                   ))
                 : Expanded(

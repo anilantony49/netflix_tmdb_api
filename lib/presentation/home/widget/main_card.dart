@@ -1,17 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class MainCardWidget extends StatelessWidget {
-  const MainCardWidget({
+
+class MainCard extends StatelessWidget {
+  const MainCard({
     super.key,
     required this.size,
     required this.image,
   });
+
   final Size size;
   final String image;
 
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 10),
       width: size.width * 0.35,
